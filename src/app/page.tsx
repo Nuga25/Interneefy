@@ -12,6 +12,7 @@ import {
   Star,
   Users,
   UserCheck,
+  Sparkles,
 } from "lucide-react";
 import Image from "next/image";
 import BrushHeading from "@/components/BrushHeading";
@@ -107,7 +108,7 @@ export default function LandingPage() {
                  <div className="absolute inset-0 -m-4 rounded-3xl border border-indigo-100 bg-indigo-50/50 -z-10 rotate-3 transform-gpu transition-transform hover:rotate-6"></div>
                  
                  <Image
-                  src="/images/hero-image.png"
+                  src="/images/hero-img.svg"
                   alt="Interneefy Dashboard Interface"
                   width={600}
                   height={800}
@@ -567,6 +568,7 @@ export default function LandingPage() {
                 &copy; {new Date().getFullYear()} Interneefy. All Rights
                 Reserved.
               </a>
+              <a href="https://storyset.com/office">Office illustrations by Storyset</a>
             </p>
           </div>
         </div>
