@@ -48,36 +48,81 @@ export default function LandingPage() {
 
       <main className="flex-1">
         {/* Hero Section */}
-        <section className="w-full pt-32 pb-20 md:pt-48 md:pb-32 relative overflow-hidden min-h-[100vh] flex items-center">
-          <div className="absolute top-0 left-0 -translate-x-1/4 -translate-y-1/4 w-96 h-96 bg-indigo-100 rounded-full opacity-60 blur-3xl"></div>
-          <div className="absolute bottom-0 right-0 translate-x-1/4 translate-y-1/4 w-96 h-96 bg-purple-100 rounded-full opacity-60 blur-3xl"></div>
-          <div className="container mx-auto px-4 md:px-8 relative z-10 flex gap-4 md:flex-row flex-col items-center">
-            <div className="flex-1">
-              <h1 className="text-4xl md:text-6xl font-bold tracking-tighter leading-tight text-gradient-primary bg-clip-text text-transparent">
-                Manage, Mentor, and Grow.
+        <section className="w-full pt-32 pb-20 md:pt-40 md:pb-32 relative overflow-hidden min-h-[90vh] flex items-center">
+          {/* Enhanced Background Glows */}
+          <div className="absolute top-0 left-0 -translate-x-1/4 -translate-y-1/4 w-[500px] h-[500px] bg-indigo-200/50 rounded-full opacity-60 blur-[100px] -z-10"></div>
+          <div className="absolute bottom-0 right-0 translate-x-1/4 translate-y-1/4 w-[500px] h-[500px] bg-purple-200/50 rounded-full opacity-60 blur-[100px] -z-10"></div>
+          
+          <div className="container mx-auto px-4 md:px-8 relative z-10 flex flex-col lg:flex-row gap-12 lg:gap-8 items-center justify-between">
+            {/* Left Column: Text & CTAs */}
+            <div className="flex-1 w-full max-w-2xl text-center lg:text-left pt-10 md:pt-0">
+              
+              {/* Optional: Annoucement Pill */}
+              <div className="inline-flex items-center gap-2 rounded-full border border-indigo-100 bg-indigo-50/50 px-4 py-1.5 text-sm font-medium text-indigo-800 mb-6">
+                <span className="flex h-2 w-2 rounded-full bg-indigo-600 animate-pulse"></span>
+                The new standard for internship management
+              </div>
+
+              {/* Consolidated H1 for better SEO and visual rhythm */}
+              <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight leading-[1.1] text-foreground">
+                Manage, Mentor, <br className="hidden md:block" /> and Grow. <br />
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-purple-600">
+                  All in one place.
+                </span>
               </h1>
-              <h2 className="text-4xl md:text-6xl font-bold tracking-tighter leading-tight text-foreground">
-                All in one Place.
-              </h2>
-              <p className="max-w-[600px] mt-8 text-gray-600 md:text-xl">
-                Interneefy is the all-in-one platform for businesses to
-                streamline their internship programs, from onboarding to final
-                evaluation.
+              
+              <p className="mt-6 text-lg md:text-xl text-gray-600 leading-relaxed max-w-[600px] mx-auto lg:mx-0">
+                Interneefy is the all-in-one platform for businesses to streamline their internship programs, from onboarding to final evaluation.
               </p>
-              <div className="mt-8">
-                <Button asChild className="px-8 py-6 text-lg font-semibold">
-                  <Link href="/signup">Get Started for Free</Link>
+              
+              {/* Action Buttons */}
+              <div className="mt-8 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+                <Button asChild size="lg" className="h-14 px-8 text-lg font-semibold rounded-full shadow-lg shadow-indigo-200 transition-transform hover:-translate-y-1">
+                  <Link href="/signup">
+                    Get Started for Free
+                    <ArrowRight className="ml-2 w-5 h-5" />
+                  </Link>
+                </Button>
+                <Button asChild variant="outline" size="lg" className="h-14 px-8 text-lg font-semibold rounded-full bg-transparent hover:bg-gray-50 border-gray-300">
+                  <Link href="#features">See How it Works</Link>
                 </Button>
               </div>
+
+              {/* Social Proof Mini-Section */}
+              <div className="mt-10 flex items-center justify-center lg:justify-start gap-4 text-sm text-gray-600">
+                <div className="flex -space-x-3">
+                  {[1, 2, 3, 4].map((i) => (
+                    <div key={i} className="w-10 h-10 rounded-full border-2 border-white bg-gray-100 overflow-hidden flex justify-center items-center">
+                      <Users className="w-4 h-4 text-gray-400" />
+                    </div>
+                  ))}
+                </div>
+                <div className="flex flex-col text-left">
+                  <div className="flex text-yellow-400">
+                    {[1, 2, 3, 4, 5].map((i) => (
+                      <Star key={i} className="w-4 h-4 fill-current" />
+                    ))}
+                  </div>
+                  <p className="mt-1"><span className="font-semibold text-foreground">Trusted by 100+</span> companies</p>
+                </div>
+              </div>
             </div>
-            <div className="flex-1">
-              <Image
-                src="/images/hero-image.png"
-                alt="Hero Image"
-                width={600}
-                height={800}
-                className="mt-12 mx-auto bg-purple-100 bg-center rounded-md object-cover"
-              />
+            
+            {/* Right Column: Hero Image with stylized wrapper */}
+            <div className="flex-1 w-full lg:pl-10 mt-8 lg:mt-0 relative group">
+              {/* Decorative background shape behind the image */}
+              <div className="absolute inset-0 -translate-x-4 translate-y-4 lg:-translate-x-6 lg:translate-y-6 rounded-[2rem] border border-gray-200/50 bg-gray-50/50 -z-10 transition-transform group-hover:translate-x-0 group-hover:translate-y-0 duration-500"></div>
+              
+              <div className="relative rounded-2xl md:rounded-[2rem] border border-gray-200 bg-white shadow-2xl shadow-indigo-900/10 overflow-hidden">
+                <Image
+                  src="/images/hero-image.png"
+                  alt="Interneefy Dashboard Preview"
+                  width={800}
+                  height={800}
+                  className="w-full h-auto object-cover"
+                  priority
+                />
+              </div>
             </div>
           </div>
         </section>
