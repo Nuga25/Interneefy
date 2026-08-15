@@ -48,82 +48,86 @@ export default function LandingPage() {
 
       <main className="flex-1">
         {/* Hero Section */}
-        <section className="w-full pt-32 pb-20 md:pt-40 md:pb-32 relative overflow-hidden min-h-[90vh] flex items-center">
-          {/* Enhanced Background Glows */}
-          <div className="absolute top-0 left-0 -translate-x-1/4 -translate-y-1/4 w-[500px] h-[500px] bg-indigo-200/50 rounded-full opacity-60 blur-[100px] -z-10"></div>
-          <div className="absolute bottom-0 right-0 translate-x-1/4 translate-y-1/4 w-[500px] h-[500px] bg-purple-200/50 rounded-full opacity-60 blur-[100px] -z-10"></div>
-          
-          <div className="container mx-auto px-4 md:px-8 relative z-10 flex flex-col lg:flex-row gap-12 lg:gap-8 items-center justify-between">
-            {/* Left Column: Text & CTAs */}
-            <div className="flex-1 w-full max-w-2xl text-center lg:text-left pt-10 md:pt-0">
+        <section className="w-full pt-32 pb-20 md:pt-40 md:pb-32 relative overflow-hidden flex items-center">
+          {/* Refined Background Blobs */}
+          <div className="absolute top-10 left-0 -translate-x-1/4 w-[500px] h-[500px] bg-indigo-200/40 rounded-full opacity-60 blur-[100px] mix-blend-multiply"></div>
+          <div className="absolute bottom-0 right-0 translate-x-1/4 translate-y-1/4 w-[500px] h-[500px] bg-purple-200/40 rounded-full opacity-60 blur-[100px] mix-blend-multiply"></div>
+        
+          <div className="container mx-auto px-4 md:px-8 relative z-10 flex gap-12 lg:gap-20 flex-col md:flex-row items-center">
+            
+            {/* Left Text Content */}
+            <div className="flex-1 max-w-2xl text-center md:text-left flex flex-col items-center md:items-start">
               
-              {/* Optional: Annoucement Pill */}
-              <div className="inline-flex items-center gap-2 rounded-full border border-indigo-100 bg-indigo-50/50 px-4 py-1.5 text-sm font-medium text-indigo-800 mb-6">
-                <span className="flex h-2 w-2 rounded-full bg-indigo-600 animate-pulse"></span>
-                The new standard for internship management
+              {/* Eyebrow Badge */}
+              <div className="inline-flex items-center rounded-full border px-3 py-1 text-sm font-semibold mb-6 bg-indigo-50 text-indigo-600 border-indigo-200 shadow-sm">
+                <Sparkles className="w-4 h-4 mr-2" />
+                The Ultimate Internship OS
               </div>
-
-              {/* Consolidated H1 for better SEO and visual rhythm */}
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight leading-[1.1] text-foreground">
-                Manage, Mentor, <br className="hidden md:block" /> and Grow. <br />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-purple-600">
+        
+              <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tighter leading-[1.15] text-foreground mb-6">
+                Manage, Mentor, and Grow. <br className="hidden md:block" />
+                <span className="bg-clip-text text-transparent bg-gradient-to-r from-indigo-500 to-purple-600">
                   All in one place.
                 </span>
               </h1>
-              
-              <p className="mt-6 text-lg md:text-xl text-gray-600 leading-relaxed max-w-[600px] mx-auto lg:mx-0">
-                Interneefy is the all-in-one platform for businesses to streamline their internship programs, from onboarding to final evaluation.
+        
+              <p className="max-w-[600px] text-lg md:text-xl text-muted-foreground leading-relaxed">
+                Interneefy is the all-in-one platform for businesses to streamline their internship programs, from initial onboarding to final performance evaluations.
               </p>
-              
-              {/* Action Buttons */}
-              <div className="mt-8 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
-                <Button asChild size="lg" className="h-14 px-8 text-lg font-semibold rounded-full shadow-lg shadow-indigo-200 transition-transform hover:-translate-y-1">
-                  <Link href="/signup">
-                    Get Started for Free
-                    <ArrowRight className="ml-2 w-5 h-5" />
-                  </Link>
+        
+              {/* Enhanced CTA Area */}
+              <div className="mt-10 flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
+                <Button asChild className="px-8 py-6 text-lg font-semibold rounded-full shadow-lg hover:shadow-xl transition-all">
+                  <Link href="/signup">Get Started for Free</Link>
                 </Button>
-                <Button asChild variant="outline" size="lg" className="h-14 px-8 text-lg font-semibold rounded-full bg-transparent hover:bg-gray-50 border-gray-300">
-                  <Link href="#features">See How it Works</Link>
+                <Button asChild variant="outline" className="px-8 py-6 text-lg font-semibold rounded-full bg-white/50 backdrop-blur-sm border-gray-200 hover:bg-gray-50">
+                  <Link href="#features">Explore Features</Link>
                 </Button>
               </div>
-
-              {/* Social Proof Mini-Section */}
-              <div className="mt-10 flex items-center justify-center lg:justify-start gap-4 text-sm text-gray-600">
-                <div className="flex -space-x-3">
-                  {[1, 2, 3, 4].map((i) => (
-                    <div key={i} className="w-10 h-10 rounded-full border-2 border-white bg-gray-100 overflow-hidden flex justify-center items-center">
-                      <Users className="w-4 h-4 text-gray-400" />
-                    </div>
-                  ))}
-                </div>
-                <div className="flex flex-col text-left">
-                  <div className="flex text-yellow-400">
-                    {[1, 2, 3, 4, 5].map((i) => (
-                      <Star key={i} className="w-4 h-4 fill-current" />
-                    ))}
-                  </div>
-                  <p className="mt-1"><span className="font-semibold text-foreground">Trusted by 100+</span> companies</p>
+        
+              {/* Social Proof Indicator */}
+              <div className="mt-10 flex items-center gap-4 text-sm text-muted-foreground">
+                 <div className="flex -space-x-3">
+                   {/* Replace these divs with next/image later if you have actual user avatars */}
+                   {[1, 2, 3, 4].map((i) => (
+                     <div key={i} className="w-10 h-10 rounded-full border-2 border-white bg-gray-200 shadow-sm" />
+                   ))}
+                 </div>
+                 <p className="text-left">
+                   Trusted by forward-thinking <br/>
+                   <span className="font-medium text-foreground">HR teams & supervisors</span>
+                 </p>
+              </div>
+            </div>
+        
+            {/* Right Image Container */}
+            <div className="flex-1 w-full relative mt-8 md:mt-0">
+              <div className="relative mx-auto max-w-[600px]">
+                 {/* Decorative background ring for depth */}
+                 <div className="absolute inset-0 -m-4 rounded-3xl border border-indigo-100 bg-indigo-50/50 -z-10 rotate-3 transform-gpu transition-transform hover:rotate-6"></div>
+                 
+                 <Image
+                  src="/images/hero-image.png"
+                  alt="Interneefy Dashboard Interface"
+                  width={600}
+                  height={800}
+                  className="rounded-2xl shadow-2xl border border-border/50 object-cover bg-white"
+                  priority
+                />
+                
+                {/* Floating UI element to make the static image feel dynamic */}
+                <div className="absolute -bottom-6 -left-6 bg-white p-4 rounded-xl shadow-xl border border-border flex items-center gap-4 hidden sm:flex">
+                   <div className="bg-green-100 p-2 rounded-full text-green-600">
+                     <CheckCircle2 className="w-6 h-6" />
+                   </div>
+                   <div>
+                     <p className="text-sm font-bold text-foreground">Task Completed</p>
+                     <p className="text-xs text-muted-foreground">Just now</p>
+                   </div>
                 </div>
               </div>
             </div>
             
-            {/* Right Column: Hero Image with stylized wrapper */}
-            <div className="flex-1 w-full lg:pl-10 mt-8 lg:mt-0 relative group">
-              {/* Decorative background shape behind the image */}
-              <div className="absolute inset-0 -translate-x-4 translate-y-4 lg:-translate-x-6 lg:translate-y-6 rounded-[2rem] border border-gray-200/50 bg-gray-50/50 -z-10 transition-transform group-hover:translate-x-0 group-hover:translate-y-0 duration-500"></div>
-              
-              <div className="relative rounded-2xl md:rounded-[2rem] border border-gray-200 bg-white shadow-2xl shadow-indigo-900/10 overflow-hidden">
-                <Image
-                  src="/images/hero-image.png"
-                  alt="Interneefy Dashboard Preview"
-                  width={800}
-                  height={800}
-                  className="w-full h-auto object-cover"
-                  priority
-                />
-              </div>
-            </div>
           </div>
         </section>
 
